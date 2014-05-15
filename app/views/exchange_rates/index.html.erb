@@ -1,0 +1,43 @@
+<div class="form-horizontal">
+
+  <% if flash[:notice] %>
+  <p id="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <%= form_tag(exchange_rates_index_url, :multipart => true, :class => "form") do %>
+  
+    <fieldset>
+    <div class="col-lg-8">
+      <div class="form-group">
+        <label class="control-label"> <%= label_tag :date, "Date" %></label>
+       <div class="form-control">
+        <%= text_field_tag :date, params[:date] || Date.today, :placeholder => Date.today %>
+         </div>
+     </div>
+     </div>
+      
+      <div class="col-lg-8">
+      <div class="form-group">
+        <label class="control-label"> <%= label_tag :amount, "Amount" %></label>
+       <div class="form-control">
+         <%= text_field_tag :amount, params[:amount], :placeholder => 100 %>
+         </div>
+     </div>
+     </div>
+    
+    
+    <%= label_tag :from, "From" %>
+    <%= select_tag :from, options_for_select(@currenci, params[:from]) %>
+      
+      
+     
+    <%= label_tag :to, "To" %>
+     <%= select_tag :to, options_for_select(@currenci, params[:to]) %>
+       
+      
+    <br />
+    <%= submit_tag "Submit", :class => 'btn' %>
+  </fieldset>
+  <% end %>
+</div>
+
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fx</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+     
+  <div class="container">
+    <div class="row">
+          
+     <%= yield %>
+             
+      
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+
+</body>
+</html>
